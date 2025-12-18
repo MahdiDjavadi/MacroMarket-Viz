@@ -1,28 +1,26 @@
-# src/market_data.py
-# Purpose: Fetch global market index data (U.S., EU, Asia)
-# Output: data/market_indexes.json (latest ~90 days) WITH symbol_id
+# src/market_data_loader.py
+# All-in-one: Fetch, save JSON, detect environment, insert to DB
 
 import os
 import json
 import requests
-from datetime import datetime
 from pathlib import Path
+from datetime import datetime
 from config.settings import API_KEYS
 from src.symbol_mapper import get_symbol_id
 import yfinance as yf
+from src.db_loader import get_connection  # Hybrid: Local or CI
 
 DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "market_indexes.json"
 
+# ---------------- JSON ----------------
 def save_json(data, filepath):
     filepath.parent.mkdir(parents=True, exist_ok=True)
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
     print(f"✅ Data saved to {filepath}")
 
-
-# =========================================================
-# Alpha Vantage (U.S. ETFs)
-# =========================================================
+# ---------------- Alpha Vantage ----------------
 def fetch_alpha_vantage_index(symbol):
     base_url = "https://www.alphavantage.co/query"
     params = {
@@ -43,8 +41,6 @@ def fetch_alpha_vantage_index(symbol):
         return None
 
     ts = data["Time Series (Daily)"]
-
-    # 🔥 Get symbol_id
     symbol_id = get_symbol_id(symbol)
     if not symbol_id:
         print(f"⚠️ symbol_id not found for {symbol}")
@@ -61,15 +57,10 @@ def fetch_alpha_vantage_index(symbol):
             "close": float(values.get("4. close", 0)),
             "volume": int(values.get("5. volume", 0))
         })
-
     return formatted
 
-
-# =========================================================
-# yfinance (Global Indexes)
-# =========================================================
+# ---------------- yfinance ----------------
 def fetch_yfinance_index(symbol):
-
     try:
         ticker = yf.Ticker(symbol)
         df = ticker.history(period="3mo", interval="1d", auto_adjust=False)
@@ -81,7 +72,6 @@ def fetch_yfinance_index(symbol):
         print(f"⚠️ yfinance returned no data for {symbol}")
         return None
 
-    # 🔥 Get symbol_id
     symbol_id = get_symbol_id(symbol)
     if not symbol_id:
         print(f"⚠️ symbol_id not found for {symbol}")
@@ -99,19 +89,52 @@ def fetch_yfinance_index(symbol):
             "close": float(row["Close"]) if not row.isna().get("Close") else None,
             "volume": int(row["Volume"]) if not row.isna().get("Volume") else None,
         })
-
     return formatted
 
+# ---------------- Insert to DB ----------------
+def insert_market_data(data):
+    conn = get_connection()
+    if not conn:
+        print("❌ DB connection failed.")
+        return
 
-# =========================================================
-# MAIN Collector
-# =========================================================
+    cursor = conn.cursor()
+    query = """
+        INSERT INTO market_data (symbol_id, date, open, high, low, close, volume)
+        VALUES (%s, %s, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE
+            open = VALUES(open),
+            high = VALUES(high),
+            low = VALUES(low),
+            close = VALUES(close),
+            volume = VALUES(volume)
+    """
+    try:
+        for row in data:
+            cursor.execute(query, (
+                row["symbol_id"],
+                row["date"],
+                row["open"],
+                row["high"],
+                row["low"],
+                row["close"],
+                row.get("volume", None)
+            ))
+        conn.commit()
+        print(f"✅ Inserted {len(data)} rows into 'market_data'.")
+    except Exception as err:
+        print(f"❌ Error inserting market data: {err}")
+    finally:
+        cursor.close()
+        conn.close()
+
+# ---------------- MAIN ----------------
 def main():
     print("🚀 Fetching market index data...")
 
     all_data = []
 
-    # ---------- Alpha Vantage (US ETFs) ----------
+    # Alpha Vantage US ETFs
     us_symbols = ["SPY", "DIA", "QQQ"]
     for sym in us_symbols:
         print(f"📈 Fetching Alpha Vantage data for {sym}...")
@@ -119,20 +142,22 @@ def main():
         if res:
             all_data.extend(res)
 
-    # ---------- Global Indexes (yfinance) ----------
-    yahoo_symbols = [
-        "^STOXX50E", "^FTSE", "^GDAXI",  # Europe
-        "^N225", "^HSI", "000001.SS"     # Asia
-    ]
+    # Global indexes via yfinance
+    yahoo_symbols = ["^STOXX50E", "^FTSE", "^GDAXI", "^N225", "^HSI", "000001.SS"]
     for sym in yahoo_symbols:
-        print(f"🌍 Fetching market data for {sym} via yfinance...")
+        print(f"🌍 Fetching yfinance data for {sym}...")
         res = fetch_yfinance_index(sym)
         if res:
             all_data.extend(res)
 
+    # Save JSON
     save_json(all_data, DATA_PATH)
-    print("✅ Market data collection complete.")
 
+    # Insert into DB
+    print("💾 Inserting data into database...")
+    insert_market_data(all_data)
+
+    print("✅ Market data pipeline complete.")
 
 if __name__ == "__main__":
     main()
