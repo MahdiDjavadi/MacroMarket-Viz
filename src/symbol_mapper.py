@@ -1,6 +1,6 @@
 # src/symbol_mapper.py
 
-from src.db import get_connection
+from src.db_loader import get_connection  # یا هر چیزی که db.py و CI_db.py ارائه می‌دهند
 import os
 
 def load_symbol_map():
