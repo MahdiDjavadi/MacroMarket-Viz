@@ -1,23 +1,10 @@
-# save_to_mysql.py
-# Works both locally (dotenv) and GitHub CI (Secrets)
+# save_to_db.py (Hybrid with db_loader)
 
-import os
-
-from dotenv import load_dotenv
-
-# Try to detect environment
-is_local = os.path.exists(".env")
-
-if is_local:
-    from src.db_connection import get_connection as get_db_connection
-    print("🌍 Environment detected: Local (.env)")
-else:
-    from src.db_connection_ci import get_connection as get_db_connection
-    print("☁️ Environment detected: GitHub CI/Secrets")
+from src.db_loader import get_connection  # خودش لوکال یا CI رو تشخیص میده
 
 def insert_market_data(data):
     """Insert market data into the market_data table."""
-    conn = get_db_connection()
+    conn = get_connection()
     if not conn:
         return
 
@@ -51,9 +38,10 @@ def insert_market_data(data):
         cursor.close()
         conn.close()
 
+
 if __name__ == "__main__":
     print("🔍 Testing database connection...")
-    conn = get_db_connection()
+    conn = get_connection()
     if conn:
         conn.close()
         print("✅ Connection closed cleanly.")
