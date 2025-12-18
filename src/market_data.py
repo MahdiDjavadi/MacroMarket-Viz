@@ -1,4 +1,4 @@
-# src/market.py
+# src/market_data.py
 # Purpose: Fetch global market index data (U.S., EU, Asia)
 # Output: data/market_indexes.json (latest ~90 days) WITH symbol_id
 
