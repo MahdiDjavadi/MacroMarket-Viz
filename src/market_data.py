@@ -129,6 +129,7 @@ def insert_market_data(data):
         conn.close()
 
 # ---------------- MAIN ----------------
+# ---------------- MAIN ----------------
 def main():
     print("🚀 Fetching market index data...")
 
@@ -150,6 +151,14 @@ def main():
         if res:
             all_data.extend(res)
 
+    # GOLD Futures (GC=F) via yfinance
+    gold_symbols = ["GC=F"]
+    for sym in gold_symbols:
+        print(f"🌟 Fetching yfinance data for {sym} (GOLD)...")
+        res = fetch_yfinance_index(sym)
+        if res:
+            all_data.extend(res)
+
     # Save JSON
     save_json(all_data, DATA_PATH)
 
@@ -158,6 +167,7 @@ def main():
     insert_market_data(all_data)
 
     print("✅ Market data pipeline complete.")
+
 
 if __name__ == "__main__":
     main()
