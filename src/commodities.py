@@ -1,6 +1,5 @@
 # src/commodities_alpha.py
-# Fetch Brent Oil & Gold (daily ~90 days) from Alpha Vantage
-# Save to JSON + insert into MySQL (auto env detection)
+# BRENT (commodity) + GOLD (via XAUUSD FX)
 
 import json
 import requests
@@ -11,59 +10,81 @@ from src.db_loader import get_connection
 
 DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "commodities_indexes.json"
 
-COMMODITIES = {
-    "BRENT": {
-        "function": "BRENT",
-        "symbol": "BRENT"
-    },
-    "GOLD": {
-        "function": "XAUUSD",
-        "symbol": "GOLD"
-    }
-}
-
-
-def fetch_commodity(cfg):
+def fetch_brent():
     url = "https://www.alphavantage.co/query"
     params = {
-        "function": cfg["function"],
-        "apikey": API_KEYS.get("ALPHA_VANTAGE_API_KEY")
+        "function": "BRENT",
+        "apikey": API_KEYS["ALPHA_VANTAGE_API_KEY"]
     }
 
     r = requests.get(url, params=params, timeout=30)
     r.raise_for_status()
     data = r.json()
 
-    key = next((k for k in data.keys() if "data" in k.lower()), None)
-    if not key:
+    sid = get_symbol_id("BRENT")
+    if not sid:
         return []
 
-    symbol_id = get_symbol_id(cfg["symbol"])
-    if not symbol_id:
-        return []
-
-    out = []
-    for row in data[key][:90]:
-        out.append({
-            "symbol_id": symbol_id,
+    return [
+        {
+            "symbol_id": sid,
             "date": row["date"],
             "open": float(row["value"]),
             "high": None,
             "low": None,
             "close": float(row["value"]),
             "volume": None
+        }
+        for row in data.get("data", [])[:90]
+    ]
+
+
+def fetch_gold_fx():
+    url = "https://www.alphavantage.co/query"
+    params = {
+        "function": "FX_DAILY",
+        "from_symbol": "XAU",
+        "to_symbol": "USD",
+        "outputsize": "compact",
+        "apikey": API_KEYS["ALPHA_VANTAGE_API_KEY"]
+    }
+
+    r = requests.get(url, params=params, timeout=30)
+    r.raise_for_status()
+    data = r.json()
+
+    ts = data.get("Time Series FX (Daily)", {})
+    sid = get_symbol_id("GOLD")
+    if not sid:
+        return []
+
+    out = []
+    for date, v in list(ts.items())[:90]:
+        out.append({
+            "symbol_id": sid,
+            "date": date,
+            "open": float(v["1. open"]),
+            "high": float(v["2. high"]),
+            "low": float(v["3. low"]),
+            "close": float(v["4. close"]),
+            "volume": None
         })
     return out
 
 
-def save_json(data):
+def main():
+    print("📡 Fetching commodities...")
+
+    data = []
+    data.extend(fetch_brent())
+    data.extend(fetch_gold_fx())
+
     DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
-    print(f"✅ Saved {len(data)} rows to commodities_indexes.json")
 
+    print(f"✅ JSON saved ({len(data)} rows)")
 
-def insert_db(data):
     conn = get_connection()
     cur = conn.cursor()
     q = """
@@ -71,28 +92,21 @@ def insert_db(data):
     VALUES (%s,%s,%s,%s,%s,%s,%s)
     ON DUPLICATE KEY UPDATE
       open=VALUES(open),
+      high=VALUES(high),
+      low=VALUES(low),
       close=VALUES(close)
     """
     for r in data:
         cur.execute(q, (
-            r["symbol_id"], r["date"], r["open"],
-            r["high"], r["low"], r["close"], r["volume"]
+            r["symbol_id"], r["date"],
+            r["open"], r["high"], r["low"],
+            r["close"], r["volume"]
         ))
     conn.commit()
     cur.close()
     conn.close()
-    print(f"💾 Inserted {len(data)} rows into DB")
 
-
-def main():
-    print("📡 Fetching commodities from Alpha Vantage...")
-    all_data = []
-    for name, cfg in COMMODITIES.items():
-        print(f"⛽ {name}")
-        all_data.extend(fetch_commodity(cfg))
-    save_json(all_data)
-    insert_db(all_data)
-    print("🏁 Done.")
+    print("🏁 Done")
 
 
 if __name__ == "__main__":
