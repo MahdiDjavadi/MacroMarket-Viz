@@ -72,7 +72,12 @@ def fetch_yfinance_index(symbol):
         print(f"⚠️ yfinance returned no data for {symbol}")
         return None
 
-    symbol_id = get_symbol_id(symbol)
+    # اگر طلا باشه، symbol_id همان GOLD باشد
+    if symbol == "GC=F":
+        symbol_id = get_symbol_id("GOLD")
+    else:
+        symbol_id = get_symbol_id(symbol)
+
     if not symbol_id:
         print(f"⚠️ symbol_id not found for {symbol}")
         return None
@@ -128,7 +133,6 @@ def insert_market_data(data):
         cursor.close()
         conn.close()
 
-# ---------------- MAIN ----------------
 # ---------------- MAIN ----------------
 def main():
     print("🚀 Fetching market index data...")
