@@ -1,0 +1,812 @@
+[
+    {
+        "symbol_id": 11,
+        "date": "2025-11-01",
+        "open": 63.8,
+        "high": null,
+        "low": null,
+        "close": 63.8,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-10-01",
+        "open": 64.54,
+        "high": null,
+        "low": null,
+        "close": 64.54,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-09-01",
+        "open": 67.99,
+        "high": null,
+        "low": null,
+        "close": 67.99,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-08-01",
+        "open": 67.87,
+        "high": null,
+        "low": null,
+        "close": 67.87,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-07-01",
+        "open": 71.04,
+        "high": null,
+        "low": null,
+        "close": 71.04,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-06-01",
+        "open": 71.44,
+        "high": null,
+        "low": null,
+        "close": 71.44,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-05-01",
+        "open": 64.45,
+        "high": null,
+        "low": null,
+        "close": 64.45,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-04-01",
+        "open": 68.13,
+        "high": null,
+        "low": null,
+        "close": 68.13,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-03-01",
+        "open": 72.73,
+        "high": null,
+        "low": null,
+        "close": 72.73,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-02-01",
+        "open": 75.44,
+        "high": null,
+        "low": null,
+        "close": 75.44,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2025-01-01",
+        "open": 79.27,
+        "high": null,
+        "low": null,
+        "close": 79.27,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-12-01",
+        "open": 73.86,
+        "high": null,
+        "low": null,
+        "close": 73.86,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-11-01",
+        "open": 74.35,
+        "high": null,
+        "low": null,
+        "close": 74.35,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-10-01",
+        "open": 75.63,
+        "high": null,
+        "low": null,
+        "close": 75.63,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-09-01",
+        "open": 74.02,
+        "high": null,
+        "low": null,
+        "close": 74.02,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-08-01",
+        "open": 80.36,
+        "high": null,
+        "low": null,
+        "close": 80.36,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-07-01",
+        "open": 85.15,
+        "high": null,
+        "low": null,
+        "close": 85.15,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-06-01",
+        "open": 82.25,
+        "high": null,
+        "low": null,
+        "close": 82.25,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-05-01",
+        "open": 81.75,
+        "high": null,
+        "low": null,
+        "close": 81.75,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-04-01",
+        "open": 89.94,
+        "high": null,
+        "low": null,
+        "close": 89.94,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-03-01",
+        "open": 85.41,
+        "high": null,
+        "low": null,
+        "close": 85.41,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-02-01",
+        "open": 83.48,
+        "high": null,
+        "low": null,
+        "close": 83.48,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2024-01-01",
+        "open": 80.12,
+        "high": null,
+        "low": null,
+        "close": 80.12,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-12-01",
+        "open": 77.63,
+        "high": null,
+        "low": null,
+        "close": 77.63,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-11-01",
+        "open": 82.94,
+        "high": null,
+        "low": null,
+        "close": 82.94,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-10-01",
+        "open": 90.6,
+        "high": null,
+        "low": null,
+        "close": 90.6,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-09-01",
+        "open": 93.72,
+        "high": null,
+        "low": null,
+        "close": 93.72,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-08-01",
+        "open": 86.15,
+        "high": null,
+        "low": null,
+        "close": 86.15,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-07-01",
+        "open": 80.11,
+        "high": null,
+        "low": null,
+        "close": 80.11,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-06-01",
+        "open": 74.84,
+        "high": null,
+        "low": null,
+        "close": 74.84,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-05-01",
+        "open": 75.47,
+        "high": null,
+        "low": null,
+        "close": 75.47,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-04-01",
+        "open": 84.64,
+        "high": null,
+        "low": null,
+        "close": 84.64,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-03-01",
+        "open": 78.43,
+        "high": null,
+        "low": null,
+        "close": 78.43,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-02-01",
+        "open": 82.59,
+        "high": null,
+        "low": null,
+        "close": 82.59,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2023-01-01",
+        "open": 82.5,
+        "high": null,
+        "low": null,
+        "close": 82.5,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-12-01",
+        "open": 80.92,
+        "high": null,
+        "low": null,
+        "close": 80.92,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-11-01",
+        "open": 91.42,
+        "high": null,
+        "low": null,
+        "close": 91.42,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-10-01",
+        "open": 93.33,
+        "high": null,
+        "low": null,
+        "close": 93.33,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-09-01",
+        "open": 89.76,
+        "high": null,
+        "low": null,
+        "close": 89.76,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-08-01",
+        "open": 100.45,
+        "high": null,
+        "low": null,
+        "close": 100.45,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-07-01",
+        "open": 111.93,
+        "high": null,
+        "low": null,
+        "close": 111.93,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-06-01",
+        "open": 122.71,
+        "high": null,
+        "low": null,
+        "close": 122.71,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-05-01",
+        "open": 113.34,
+        "high": null,
+        "low": null,
+        "close": 113.34,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-04-01",
+        "open": 104.58,
+        "high": null,
+        "low": null,
+        "close": 104.58,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-03-01",
+        "open": 117.25,
+        "high": null,
+        "low": null,
+        "close": 117.25,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-02-01",
+        "open": 97.13,
+        "high": null,
+        "low": null,
+        "close": 97.13,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2022-01-01",
+        "open": 86.51,
+        "high": null,
+        "low": null,
+        "close": 86.51,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-12-01",
+        "open": 74.17,
+        "high": null,
+        "low": null,
+        "close": 74.17,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-11-01",
+        "open": 81.05,
+        "high": null,
+        "low": null,
+        "close": 81.05,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-10-01",
+        "open": 83.54,
+        "high": null,
+        "low": null,
+        "close": 83.54,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-09-01",
+        "open": 74.49,
+        "high": null,
+        "low": null,
+        "close": 74.49,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-08-01",
+        "open": 70.75,
+        "high": null,
+        "low": null,
+        "close": 70.75,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-07-01",
+        "open": 75.17,
+        "high": null,
+        "low": null,
+        "close": 75.17,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-06-01",
+        "open": 73.16,
+        "high": null,
+        "low": null,
+        "close": 73.16,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-05-01",
+        "open": 68.53,
+        "high": null,
+        "low": null,
+        "close": 68.53,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-04-01",
+        "open": 64.81,
+        "high": null,
+        "low": null,
+        "close": 64.81,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-03-01",
+        "open": 65.41,
+        "high": null,
+        "low": null,
+        "close": 65.41,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-02-01",
+        "open": 62.28,
+        "high": null,
+        "low": null,
+        "close": 62.28,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2021-01-01",
+        "open": 54.77,
+        "high": null,
+        "low": null,
+        "close": 54.77,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-12-01",
+        "open": 49.99,
+        "high": null,
+        "low": null,
+        "close": 49.99,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-11-01",
+        "open": 42.69,
+        "high": null,
+        "low": null,
+        "close": 42.69,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-10-01",
+        "open": 40.19,
+        "high": null,
+        "low": null,
+        "close": 40.19,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-09-01",
+        "open": 40.91,
+        "high": null,
+        "low": null,
+        "close": 40.91,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-08-01",
+        "open": 44.74,
+        "high": null,
+        "low": null,
+        "close": 44.74,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-07-01",
+        "open": 43.24,
+        "high": null,
+        "low": null,
+        "close": 43.24,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-06-01",
+        "open": 40.27,
+        "high": null,
+        "low": null,
+        "close": 40.27,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-05-01",
+        "open": 29.38,
+        "high": null,
+        "low": null,
+        "close": 29.38,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-04-01",
+        "open": 18.38,
+        "high": null,
+        "low": null,
+        "close": 18.38,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-03-01",
+        "open": 32.01,
+        "high": null,
+        "low": null,
+        "close": 32.01,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-02-01",
+        "open": 55.66,
+        "high": null,
+        "low": null,
+        "close": 55.66,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2020-01-01",
+        "open": 63.65,
+        "high": null,
+        "low": null,
+        "close": 63.65,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-12-01",
+        "open": 67.31,
+        "high": null,
+        "low": null,
+        "close": 67.31,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-11-01",
+        "open": 63.21,
+        "high": null,
+        "low": null,
+        "close": 63.21,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-10-01",
+        "open": 59.71,
+        "high": null,
+        "low": null,
+        "close": 59.71,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-09-01",
+        "open": 62.83,
+        "high": null,
+        "low": null,
+        "close": 62.83,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-08-01",
+        "open": 59.04,
+        "high": null,
+        "low": null,
+        "close": 59.04,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-07-01",
+        "open": 63.92,
+        "high": null,
+        "low": null,
+        "close": 63.92,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-06-01",
+        "open": 64.22,
+        "high": null,
+        "low": null,
+        "close": 64.22,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-05-01",
+        "open": 71.32,
+        "high": null,
+        "low": null,
+        "close": 71.32,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-04-01",
+        "open": 71.23,
+        "high": null,
+        "low": null,
+        "close": 71.23,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-03-01",
+        "open": 66.14,
+        "high": null,
+        "low": null,
+        "close": 66.14,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-02-01",
+        "open": 63.96,
+        "high": null,
+        "low": null,
+        "close": 63.96,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2019-01-01",
+        "open": 59.41,
+        "high": null,
+        "low": null,
+        "close": 59.41,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2018-12-01",
+        "open": 57.36,
+        "high": null,
+        "low": null,
+        "close": 57.36,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2018-11-01",
+        "open": 64.75,
+        "high": null,
+        "low": null,
+        "close": 64.75,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2018-10-01",
+        "open": 81.03,
+        "high": null,
+        "low": null,
+        "close": 81.03,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2018-09-01",
+        "open": 78.89,
+        "high": null,
+        "low": null,
+        "close": 78.89,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2018-08-01",
+        "open": 72.53,
+        "high": null,
+        "low": null,
+        "close": 72.53,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2018-07-01",
+        "open": 74.25,
+        "high": null,
+        "low": null,
+        "close": 74.25,
+        "volume": null
+    },
+    {
+        "symbol_id": 11,
+        "date": "2018-06-01",
+        "open": 74.41,
+        "high": null,
+        "low": null,
+        "close": 74.41,
+        "volume": null
+    }
+]
